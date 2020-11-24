@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>   
+  <style type="text/css">
+    body
+    {
+      margin:40px;
+      font-size: 25px;
+      
+    }
+    select
+    {
+      font-size: 20px;
+      width: 100px;
+      margin-left: 20px;
+    }
+    table
+    {
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+<body>
+  <h2>choose country:</h2>
+  <table>
+    <tr>
+      <td>
+        country:
+        <select class="country">
+          <option></option>
+          <option value="Jordan">Jordan</option>
+          <option value="Usa">Usa</option>
+        </select> 
+      </td>
+      <td>
+        <select class="city">
+          city
+          <option value="Amman">Amman</option>
+          <option value="Irbid">Irbid</option>
+          <option value="Ajloun">Ajloun</option>
+        </select>
+      </td> 
+      <td>
+        <select class="state">
+          <option value="Newyork">Newyork</option>
+          <option value="California">California</option>
+          <option value="Washington">Washington</option>
+        </select> 
+      </td>
+      <td>      
+        <select class="zip-code-jo">
+          <option value="22">32</option>
+          <option value="22">100</option>
+        </select>
+      </td>
+      <td>
+        <select class="zip-code-usa">
+          <option value="33">90</option>
+          <option value="33">97</option>
+        </select>
+         <td id="write"></td>
+      </td>
+    </tr>
+  </table>
+<script type="text/javascript">
+ //   var country= $(".country").click(function(){​​​​​
+ //      switch (country.val()) 
+ //    {​​​​​​
+ //      case "Jordan":
+ //      $(".state").hide();
+ //      $(".zip-code-usa").hide();
+ //      $(".city").show();
+ //      $(".zip-code-jo").show();
+ //        break;
+ //        case "Usa":
+ //        $(".city").hide();
+ //        $(".zip-code-jo").hide();
+ //        $(".state").show();
+ //        $(".zip-code-usa").show();
+ //           break;
+ //    }​​​​​​
+ 
+ // }​​​​​​);
+
+var country=$(".country").change(function()
+{
+  if ( country.val()== "Jordan") 
+    {$(".state").hide(); 
+     $(".zip-code-usa").hide();
+     $(".city").show();
+     $(".zip-code-jo").show();
+     document.getElementById('write').innerHTML="select city and zip-code-jo";
+      }
+
+  else if(country.val()== "Usa")
+  {  $(".city").hide();
+     $(".zip-code-jo").hide();
+     $(".state").show();
+     $(".zip-code-usa").show();
+        document.getElementById('write').innerHTML="select state and zip-code-usa";
+  }
+  
+});
+
+</script>
+</body>
+</html>

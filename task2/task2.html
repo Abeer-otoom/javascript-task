@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>  
+	<style type="text/css">
+		body
+		{
+			margin:40px;
+			font-size: 25px;
+			
+		}
+		button
+		{
+			width: 150px;
+			height: 40px;
+			border-radius: 30px;
+			margin-left: 25px;
+
+		}
+		button:hover
+		{
+			color: white;
+			background-color: gray;
+
+		}
+	</style> 
+</head>
+<body>
+<h2>What is JavaScript?</h2>
+<ul>
+	<li class="wrong">Server Side </li>
+	<li class="right">Client Side</li> 
+    <li class="wrong">Both Side</li> 
+    <li class="wrong">Fries And Coke</li>
+</ul>
+<button id="bt"><b>Show answer<b></button>
+<script type="text/javascript">
+$("#bt").click(function()
+{
+	$(".wrong").css("color","red");
+	$(".right").css("color","green");
+})	
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <style type="text/css">
+    button
+    {
+      width: 100px;
+      background-color:#00CED1;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    button:hover
+    {
+      background-color:   #008080;
+    }
+    .center
+    {
+      margin-top: 30px;
+      border-style: dotted
+    }
+
+  </style>
+</head>
+<body>
+  <h2 style="text-align: center;">Online Exam </h2>
+<center class="center">
+<form name="RegForm" >
+<h3>QUESTION1:</h3>
+<h4>What is JavaScript?</h4>
+<input type="radio" name="n1" value="Server" id="a1">Server Side <br>
+<input type="radio" name="n1" value="client" id="a1">client Side <br>
+<input type="radio" name="n1" value="both" id="a1">both Side
+<h3>QUESTION2:</h3>
+<h4>Inside which HTML element do we put the JavaScript?</h4>
+<input type="radio" name="n2" value="script" id="a2"> script <br>
+<input type="radio" name="n2" value="html" id="a2"> html <br>
+<input type="radio" name="n2" value="java" id="a2">java
+<h3>QUESTION3:</h3>
+<h4>The external JavaScript file must contain the script tag?</h4>
+<input type="radio" name="n3" value="TRUE" id="a3"> TRUE <br>
+<input type="radio" name="n3" value="FALSE" id="a3"> FALSE 
+<h3>QUESTION4:</h3>
+<h4>What does CSS stand for?</h4>
+<input type="radio" name="n4" value="cacading" id="a4">cacading style sheets <br>
+<input type="radio" name="n4" value="computer" id="a4"> computer style sheets  <br>
+<input type="radio" name="n4" value="creative" id="a4"> creative style sheets
+<h3>QUESTION5:</h3>
+<h4>Where in an HTML document is the correct place to refer to an external style sheet?</h4>
+<input type="radio" name="n5" value="body" id="a5">in the body section <br>
+<input type="radio" name="n5" value="end" id="a5"> at the end  <br>
+<input type="radio" name="n5" value="head" id="a5"> in the head section
+<br><br>
+<button onclick="check()">Finish</button> 
+<p id="result" style="font-size: 20px;"></p>
+
+</form>
+</center>
+<script type="text/javascript">
+	// Check browser support
+if (typeof(Storage) !== "undefined")
+ {
+  // Store
+  localStorage.setItem("ques1", "client");
+  localStorage.setItem("ques2", "script");
+  localStorage.setItem("ques3", "TRUE");
+  localStorage.setItem("ques4", "cacading");
+  localStorage.setItem("ques5", "head");
+
+  var a1=localStorage.getItem("ques1");
+  var a2=localStorage.getItem("ques2");
+  var a3=localStorage.getItem("ques3");
+  var a4=localStorage.getItem("ques4");
+  var a5=localStorage.getItem("ques5");
+
+       var answer1 = document.forms["RegForm"]["n1"]; 
+	   var answer2 = document.forms["RegForm"]["n2"]; 
+       var answer3 = document.forms["RegForm"]["n3"]; 
+       var answer4 = document.forms["RegForm"]["n4"]; 
+       var answer5 = document.forms["RegForm"]["n5"]; 
+       var count =0;
+	function check()
+	{  
+       
+       var answer=[answer1.value , answer2.value , answer3.value , answer4.value , answer5.value];
+       var storge=[a1 , a2 , a3 , a4 ,a5 ];
+     
+       for (var i = 0; i < 5; i++) 
+       { 
+       	 if (answer[i]==storge[i]) 
+       		{ count+=1;}	
+       }
+     
+       	document.getElementById('result').innerHTML="result is : "+ count; 
+        alert("result is : "+ count);
+     
+	}
+  
+}
+
+</script>
+
+</body>
+</html>

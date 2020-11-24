@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>calculator </title>
+<style>
+body
+{
+	margin:40px;
+	font-size: 25px;
+}
+		
+div button
+{
+	margin-left: 30px;
+	width: 50px;
+	font-size: 25px;
+	height: 40px;
+	background-color: gray;
+}
+form
+{
+	
+	font-size: 30px;
+}
+form input
+{
+	margin-right: 20px;
+	width: 40px;
+	height: 30px;
+}
+p
+{
+	font-size: 25px;
+	margin-left: 70px;
+	width: 120px;
+	height: 30px;
+	background-color: gray;
+	text-align: center;
+	padding: 20px;
+}
+</style>
+</head>
+<body>
+<form>
+enter number1: <input type="text" id="num1" > &nbsp;  enter number2: <input type="text" id="num2"><br><br>
+</form>
+
+<div>
+<button onclick="operator1()">-</button>
+<button onclick="operator2()">+</button>
+<button onclick="operator3()">/</button>
+<button onclick="operator4()">*</button>
+</div>
+<p id="write">result=</p>
+
+<script type="text/javascript">
+
+function operator1() {
+	var number1=window.num1.value;
+    var number2=window.num2.value;
+	var sub=number1-number2;
+	document.getElementById("write").innerHTML="result= "+sub;
+	}
+function operator2() {
+	var number1=window.num1.value;
+    var number2=window.num2.value;
+	var sum=parseFloat(number1)+parseFloat(number2);
+	document.getElementById("write").innerHTML="result = "+sum;
+	}
+function operator3() {
+	var number1=window.num1.value;
+    var number2=window.num2.value;
+	var div=parseFloat(number1)/parseFloat(number2);
+	document.getElementById("write").innerHTML="result = "+div;
+	}
+function operator4() {
+	var number1=window.num1.value;
+    var number2=window.num2.value;
+	var mul=parseFloat(number1)*parseFloat(number2);
+	document.getElementById("write").innerHTML="result = "+mul;
+	}
+</script>
+</body>
+</html>

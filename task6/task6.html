@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+form
+{
+	margin-left: 500px;
+	margin-top: 50px;
+}
+
+#c1
+{
+	border-radius: 50px;
+	font-size: 20px;
+
+}
+input[type=text],input[type=password] {
+width:350px;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+input[type=submit] {
+width: 100px;
+background-color:#00CED1;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+background-color: 	#008080;
+}
+
+	</style>
+</head>
+<body> 
+	<h2 style="text-align: center; padding-top: 20px;">REGISTRATION FORM</h2> 
+	<form name="RegForm" onsubmit="return check()" method="post"> 
+		<label>Email:</label><br>
+		<input type="text"  name="email" placeholder="enter email address"><label id="error1" style="color: red;"></label>
+		<br>
+         <label>Password:</label><br>
+		<input type="password"	 name="Password" placeholder="enter password">
+        <br>
+        <label>RE-password:</label><br>
+		<input type="password"	 name="re-Password" placeholder="re-Password"><label id="error" style="color: red;"></label>	
+		<br>
+		<label>Phone number:</label><br>
+	    <input type="text" name="Telephone" placeholder="enter phone number">
+        <br>
+			<input type="submit" value="send" name="Submit" id="c1"> 
+		<br>
+	</form> 
+</body> 
+
+<script> 
+    
+		
+		var email = document.forms["RegForm"]["email"]; 
+		var phone = document.forms["RegForm"]["Telephone"]; 
+		var password = document.forms["RegForm"]["Password"]; 
+		var repassword = document.forms["RegForm"]["re-Password"]; 
+
+
+	function check() 
+	{ 
+		if (email.value == "") { 
+			window.alert("Please enter  e-mail address."); 
+			email.focus(); 
+			return false; 
+		} 
+        if (! (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/).test(email.value))
+           {
+                //alert("You have entered an invalid email address!");
+                document.getElementById("error1").innerHTML=" * You have entered an invalid email address!";
+                email.focus(); 
+			return false; 
+            }
+        if (password.value == "") { 
+			window.alert("Please enter your password"); 
+			password.focus(); 
+			return false; 
+		} 
+        
+        if (repassword.value == "") { 
+			window.alert("Please enter your repassword"); 
+			repassword.focus(); 
+			return false; 
+		} 
+
+		if (phone.value == "") { 
+			window.alert("Please enter your telephone number."); 
+			phone.focus(); 
+			return false; 
+		}
+		if (password.value != repassword.value) 
+		{   document.getElementById("error").innerHTML=" * password must equl re-password";
+			//window.alert("password must equl re-password"); 
+			phone.focus(); 
+			return false; 
+		}
+
+		if (isNaN(phone.value)) 
+		{
+			window.alert("Please enter your telephone number coorect!!!"); 
+			phone.focus(); 
+			return false; 
+		}
+		
+		 return true;
+
+	}
+
+
+
+</script> 
+
+</html>
